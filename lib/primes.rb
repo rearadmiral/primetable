@@ -1,7 +1,7 @@
 class Primes
 
-  def self.contains?(potential)
-    return false if [1,2].include?(potential)
+  def self.include?(potential)
+    return false if potential == 1
     test(potential)
   end
 
