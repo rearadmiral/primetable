@@ -1,8 +1,8 @@
 class SieveOfEratosthenes
 
-  def initialize(range)
-    @range = range
-    @potentials = Set.new(range.to_a)
+  def initialize(range_or_array)
+    @range = range_or_array
+    @potentials = Set.new(range_or_array.to_a)
   end
 
   def strain_out_composites
@@ -10,7 +10,7 @@ class SieveOfEratosthenes
 
     while @range.include? current_prime
       @potentials -= multiples_in_range(current_prime)
-      current_prime = next_smallest_prime(@potentials)
+      current_prime = next_smallest_prime
     end
   end
 
@@ -20,8 +20,8 @@ class SieveOfEratosthenes
     end
   end
 
-  def next_smallest_prime(numbers)
-    numbers.find do |number|
+  def next_smallest_prime
+    @potentials.find do |number|
       possible_factors(number).none? { |factor| number % factor == 0 }
     end
   end

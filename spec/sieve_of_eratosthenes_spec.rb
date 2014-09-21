@@ -12,12 +12,14 @@ describe SieveOfEratosthenes do
     expect(sieve.multiples_in_range(21)).to eq []
   end
 
-  it "can find the next smallest prime in a set of numbers" do
-    expect(sieve.next_smallest_prime([4, 6, 8, 9, 11, 18])).to eq 11
+  it "can find the next smallest prime" do
+    sieve = SieveOfEratosthenes.new([4, 6, 8, 9, 11, 18])
+    expect(sieve.next_smallest_prime).to eq 11
   end
 
   it "returns nil if set contains no more primes" do
-    expect(sieve.next_smallest_prime([4, 6, 8, 9, 10, 12, 15, 16, 18, 20, 21, 22, 24])).to be nil
+    sieve = SieveOfEratosthenes.new([4, 6, 8, 9, 10, 12, 15, 16, 18, 20, 21, 22, 24])
+    expect(sieve.next_smallest_prime).to be nil
   end
 
   it "knows the possible factors to check for a number" do
