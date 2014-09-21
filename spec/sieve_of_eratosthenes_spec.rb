@@ -5,11 +5,11 @@ describe SieveOfEratosthenes do
   let(:sieve) { SieveOfEratosthenes.new(2..20) }
 
   it "can generate multiples of a number in the range" do
-    expect(sieve.multiples_in_range(3)).to eq [3, 6, 9, 12, 15, 18]
+    expect(sieve.multiples_in_range(2)).to eq [4, 6, 8, 10, 12, 14, 16, 18, 20]
   end
 
   it "won't generate multiples of a number out of the range" do
-    expect(sieve.multiples_in_range(21)).to eq []
+    expect(sieve.multiples_in_range(11)).to eq []
   end
 
   it "can find the next smallest prime" do

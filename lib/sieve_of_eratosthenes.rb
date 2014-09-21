@@ -12,10 +12,12 @@ class SieveOfEratosthenes
       @potentials -= multiples_in_range(current_prime)
       current_prime = next_smallest_prime
     end
+
+    @potentials
   end
 
   def multiples_in_range(n)
-    (1..@range.end/n).each_with_object([]) do |i, multiples|
+    (2..@range.end/n).each_with_object([]) do |i, multiples|
       multiples << i * n
     end
   end
