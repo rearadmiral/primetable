@@ -10,8 +10,8 @@ describe Primes do
     expect(Primes.up_to(30)).to eq KNOWN_PRIMES_UP_TO_30
   end
 
-  # it "should know the known primes" do
-  #   expect(Primes.up_to(1000)).to eq KNOWN_PRIMES_UP_TO_1000
-  # end
+  it "should know the known primes" do
+    expect(Primes.up_to(1000)).to eq KNOWN_PRIMES_UP_TO_1000
+  end
 
 end
