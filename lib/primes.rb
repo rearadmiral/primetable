@@ -1,19 +1,9 @@
+require_relative 'sieve_of_eratosthenes'
+
 class Primes
 
-  def self.include?(potential)
-    return false if potential == 1
-    test(potential)
-  end
-
-  private
-
-  def self.test(potential)
-    (2..potential-1).each do |potential_divisor|
-      if potential % potential_divisor == 0
-        return false
-      end
-    end
-    true
+  def self.up_to(n)
+    SieveOfEratosthenes.new(2..n).strain_out_composites
   end
 
 end
