@@ -1,9 +1,10 @@
-require_relative 'sieve_of_eratosthenes'
-
 class Primes
 
-  def self.up_to(n)
-    SieveOfEratosthenes.new(2..n).strain_out_composites
+  def self.all
+    Enumerator.new do |yielder|
+      current = 2
+      yielder.yield 2
+    end
   end
 
 end
