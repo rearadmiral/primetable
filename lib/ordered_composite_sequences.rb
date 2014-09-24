@@ -1,3 +1,5 @@
+require_relative 'composite_sequence'
+
 class OrderedCompositeSequences
 
   def initialize
@@ -5,7 +7,19 @@ class OrderedCompositeSequences
   end
 
   def take_next_composite!
-    next_sequence.take_next!.tap { @sequences.sort! }
+    next_sequence.take_next!.tap do |return_value|
+
+      @sequences.sort!
+      @sequences.each do |other_sequence|
+        upcoming_value = other_sequence.next
+        if upcoming_value == return_value
+          other_sequence.take_next!
+        end
+        break if upcoming_value > return_value
+      end
+
+      @sequences.sort!
+    end
   end
 
   def next_composite
