@@ -11,6 +11,17 @@ describe OrderedCompositeSequences do
     end
   end
 
+  describe "#empty?" do
+    it "is true when empty" do
+      expect(sequences.empty?).to be true
+    end
+
+    it "is false when has some sequences" do
+      sequences.add_sequence_for 2
+      expect(sequences.empty?).to be false
+    end
+  end
+
   describe "#next_composite" do
     it "returns the next lowest composite available but keeps it" do
       sequences.add_sequence_for 3

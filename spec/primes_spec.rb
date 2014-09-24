@@ -17,9 +17,9 @@ describe Primes do
   it "can generate the first prime" do
     expect(Primes.first(1)).to eq [2]
   end
-  #
+
   # it "can generate the first prime" do
-  #   expect(Primes.all.first(2)).to eq [2,3]
+  #   expect(Primes.first(2)).to eq [2,3]
   # end
 
   # it "can generate the first N primes" do

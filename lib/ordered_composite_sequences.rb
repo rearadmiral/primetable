@@ -6,6 +6,10 @@ class OrderedCompositeSequences
     @sequences = []
   end
 
+  def empty?
+    @sequences.empty?
+  end
+
   def take_next_composite!
     next_sequence.take_next!.tap do |return_value|
 
