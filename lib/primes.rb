@@ -1,10 +1,12 @@
 class Primes
 
-  def self.all
-    Enumerator.new do |yielder|
-      current = 2
-      yielder.yield 2
+  def self.first(n)
+    current = 2
+    composites = {}
+    
+    while true
     end
   end
+
 
 end
