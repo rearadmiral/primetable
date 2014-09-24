@@ -14,9 +14,9 @@ describe Primes do
   #   expect(Primes.up_to(1000)).to eq KNOWN_PRIMES_UP_TO_1000
   # end
 
-  # it "can generate the first prime" do
-  #   expect(Primes.all.first(1)).to eq [2]
-  # end
+  it "can generate the first prime" do
+    expect(Primes.first(1)).to eq [2]
+  end
   #
   # it "can generate the first prime" do
   #   expect(Primes.all.first(2)).to eq [2,3]
