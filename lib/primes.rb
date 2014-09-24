@@ -8,11 +8,12 @@ class Primes
     current = 2
 
     while primes.size < n
-      puts "[DEBUG] checking #{current} for primality"
       if composites.empty? || composites.next_composite > current
-        puts "[DEBUG] found prime!  => #{current}"
         primes << current
         composites.add_sequence_for current
+        current += 1
+      elsif composites.next_composite == current
+        composites.take_next_composite!
         current += 1
       end
 
