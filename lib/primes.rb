@@ -13,10 +13,9 @@ class Primes
         puts "[DEBUG] found prime!  => #{current}"
         primes << current
         composites.add_sequence_for current
-      else
-
+        current += 1
       end
-      current = composites.take_next_composite!
+
     end
 
     primes
