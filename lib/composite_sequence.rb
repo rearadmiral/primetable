@@ -9,16 +9,16 @@ class CompositeSequence
     @current = 2 * prime
   end
 
-  def upcoming
+  def next
     @current
   end
 
   def <=>(other)
-    self.upcoming <=> other.upcoming
+    self.next <=> other.next
   end
 
-  def next
-    upcoming.tap do
+  def take_next!
+    self.next.tap do
       @current += @base
     end
   end

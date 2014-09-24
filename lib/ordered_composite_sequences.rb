@@ -5,11 +5,11 @@ class OrderedCompositeSequences
   end
 
   def take_next_composite!
-    next_sequence.next.tap { @sequences.sort! }
+    next_sequence.take_next!.tap { @sequences.sort! }
   end
 
   def next_composite
-    next_sequence.upcoming
+    next_sequence.next
   end
 
   def add_sequence_for(prime)
