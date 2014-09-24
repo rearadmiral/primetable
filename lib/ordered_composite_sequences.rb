@@ -4,16 +4,23 @@ class OrderedCompositeSequences
     @sequences = []
   end
 
-  def next_sequence
-    @sequences[0]
+  def take_next_composite!
+    next_sequence.next.tap { @sequences.sort! }
+  end
+
+  def next_composite
+    next_sequence.upcoming
   end
 
   def add_sequence_for(prime)
     (@sequences << CompositeSequence.of_base_prime(prime)).sort!
+    nil
   end
 
-  def size
-    @sequences.size
+  private
+
+  def next_sequence
+    @sequences[0]
   end
 
 end
