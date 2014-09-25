@@ -2,6 +2,9 @@ A small ruby app that prints a multiplication table of prime numbers.
 
 It uses a simplistic incremental Sieve of Eratosthenes algorithm to find primes based on this academic paper: http://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf
 
+I build and deploy my gems using Snap:
+
+[![Build Status](https://snap-ci.com/rearadmiral/primetable/branch/incremental_sieve/build_image)](https://snap-ci.com/rearadmiral/primetable/branch/incremental_sieve)
 
 Instructions
 ============
