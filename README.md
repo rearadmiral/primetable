@@ -9,9 +9,9 @@ I build and deploy my gems using Snap:
 Instructions
 ============
 
-   > $ gem install primetable
+   > gem install primetable
 
-   > $ primetable 10
+   > primetable 10
 
 This will print the first 10 prime numbers.  You can try raising that number and seeing how far you can go.
 
@@ -19,6 +19,6 @@ This will print the first 10 prime numbers.  You can try raising that number and
 Interesting Prime Number Resources
 ----------------------------------
 
-[[Visualization of primes on the number line](http://www.fastcodesign.com/1670397/infographic-visualizing-prime-numbers-for-people-who-suck-at-math)]
+[Visualization of primes on the number line (http://www.fastcodesign.com/1670397/infographic-visualizing-prime-numbers-for-people-who-suck-at-math)]
 
-[[Great Internet Mersenne Prime Search](http://www.mersenne.org/)] - use your spare CPU cycles to find the biggest primes
+[Great Internet Mersenne Prime Search (http://www.mersenne.org/)] - use your spare CPU cycles to find the biggest primes
