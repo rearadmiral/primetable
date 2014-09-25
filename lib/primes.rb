@@ -1,3 +1,5 @@
+require_relative 'ordered_composite_sequences'
+
 class Primes
 
   # based on incremental sieve of eratosthenes algorithm described by:
