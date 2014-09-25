@@ -2,8 +2,8 @@
 
 require 'benchmark'
 
-require_relative 'lib/primes'
-require_relative 'lib/table_printer'
+require_relative '../lib/primes'
+require_relative '../lib/table_printer'
 
 if ARGV && ARGV.size == 1 && ARGV[0].to_i > 0
   n = ARGV[0].to_i
