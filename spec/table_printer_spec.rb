@@ -11,12 +11,12 @@ describe TablePrinter do
 
     printer.print
 
-    expect(io).to include(<<-TABLE)
-     2 | 3 |  5|
- ===============
- 2 | 4 | 6 | 10|
- 3 | 6 | 9 | 15|
- 5 | 10| 15| 25|
+    expect(io.string).to include(<<-TABLE)
+      2 |  3 |  5
+====================
+ 2 |  4 |  6 | 10
+ 3 |  6 |  9 | 15
+ 5 | 10 | 15 | 25
 TABLE
 
   end

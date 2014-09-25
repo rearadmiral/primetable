@@ -1,5 +1,4 @@
 require_relative '../lib/primes'
-require 'benchmark'
 
 describe Primes do
 
@@ -20,10 +19,7 @@ describe Primes do
   end
 
   it "can generate the first 168 primes" do
-    first_168_primes = []
-    realtime = Benchmark.realtime { first_168_primes = Primes.first(168) }
-    expect(realtime).to be < 0.2
-    expect(first_168_primes).to eq KNOWN_PRIMES_UP_TO_1000
+    expect(Primes.first(168)).to eq KNOWN_PRIMES_UP_TO_1000
   end
 
 end

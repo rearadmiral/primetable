@@ -9,15 +9,12 @@ class TablePrinter
   end
 
   def print
-
     print_header_row
+    print_rows
+  end
 
-    @table.each_with_index do |row, i|
-      @io.write(format % @primes[i] + separator)
-      @io.write formatted_list(row)
-      @io.write "\n"
-    end
-
+  def longest_digits
+    @longest_digits ||= @table.flatten.max.to_s.size
   end
 
   private
@@ -28,6 +25,14 @@ class TablePrinter
     @io.write "\n"
     @io.write "=" * ((@primes.size + 1) * field_size)
     @io.write "\n"
+  end
+
+  def print_rows
+    @table.each_with_index do |row, i|
+      @io.write(format % @primes[i] + separator)
+      @io.write formatted_list(row)
+      @io.write "\n"
+    end
   end
 
   def formatted_list(array)
@@ -48,10 +53,6 @@ class TablePrinter
 
   def field_size
     @field_size ||= longest_digits + separator.size
-  end
-
-  def longest_digits
-    @longest_digits ||= @table.max_by { |row| row.max }.to_s.size
   end
 
 end
